@@ -1,0 +1,707 @@
+
+%% Beginning of file 'sample63.tex'
+%%
+%% Modified 2019 June
+%%
+%% This is a sample manuscript marked up using the
+%% AASTeX v6.3 LaTeX 2e macros.
+%%
+%% AASTeX is now based on Alexey Vikhlinin's emulateapj.cls 
+%% (Copyright 2000-2015).  See the classfile for details.
+
+%% AASTeX requires revtex4-1.cls (http://publish.aps.org/revtex4/) and
+%% other external packages (latexsym, graphicx, amssymb, longtable, and epsf).
+%% All of these external packages should already be present in the modern TeX 
+%% distributions.  If not they can also be obtained at www.ctan.org.
+
+%% The first piece of markup in an AASTeX v6.x document is the \documentclass
+%% command. LaTeX will ignore any data that comes before this command. The 
+%% documentclass can take an optional argument to modify the output style.
+%% The command below calls the preprint style which will produce a tightly 
+%% typeset, one-column, single-spaced document.  It is the default and thus
+%% does not need to be explicitly stated.
+%%
+%%
+%% using aastex version 6.3
+\documentclass[preprint]{aastex63}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+%% The default is a single spaced, 10 point font, single spaced article.
+%% There are 5 other style options available via an optional argument. They
+%% can be invoked like this:
+%%
+%% \documentclass[arguments]{aastex63}
+%% 
+%% where the layout options are:
+%%
+%%  twocolumn   : two text columns, 10 point font, single spaced article.
+%%                This is the most compact and represent the final published
+%%                derived PDF copy of the accepted manuscript from the publisher
+%%  manuscript  : one text column, 12 point font, double spaced article.
+%%  preprint    : one text column, 12 point font, single spaced article.  
+%%  preprint2   : two text columns, 12 point font, single spaced article.
+%%  modern      : a stylish, single text column, 12 point font, article with
+%% 		  wider left and right margins. This uses the Daniel
+%% 		  Foreman-Mackey and David Hogg design.
+%%  RNAAS       : Preferred style for Research Notes which are by design 
+%%                lacking an abstract and brief. DO NOT use \begin{abstract}
+%%                and \end{abstract} with this style.
+%%
+%% Note that you can submit to the AAS Journals in any of these 6 styles.
+%%
+%% There are other optional arguments one can invoke to allow other stylistic
+%% actions. The available options are:
+%%
+%%   astrosymb    : Loads Astrosymb font and define \astrocommands. 
+%%   tighten      : Makes baselineskip slightly smaller, only works with 
+%%                  the twocolumn substyle.
+%%   times        : uses times font instead of the default
+%%   linenumbers  : turn on lineno package.
+%%   trackchanges : required to see the revision mark up and print its output
+%%   longauthor   : Do not use the more compressed footnote style (default) for 
+%%                  the author/collaboration/affiliations. Instead print all
+%%                  affiliation information after each name. Creates a much 
+%%                  longer author list but may be desirable for short 
+%%                  author papers.
+%% twocolappendix : make 2 column appendix.
+%%   anonymous    : Do not show the authors, affiliations and acknowledgments 
+%%                  for dual anonymous review.
+%%
+%% these can be used in any combination, e.g.
+%%
+%% \documentclass[twocolumn,linenumbers,trackchanges]{aastex63}
+%%
+%% AASTeX v6.* now includes \hyperref support. While we have built in specific
+%% defaults into the classfile you can manually override them with the
+%% \hypersetup command. For example,
+%%
+%% \hypersetup{linkcolor=red,citecolor=green,filecolor=cyan,urlcolor=magenta}
+%%
+%% will change the color of the internal links to red, the links to the
+%% bibliography to green, the file links to cyan, and the external links to
+%% magenta. Additional information on \hyperref options can be found here:
+%% https://www.tug.org/applications/hyperref/manual.html#x1-40003
+%%
+%% Note that in v6.3 "bookmarks" has been changed to "true" in hyperref
+%% to improve the accessibility of the compiled pdf file.
+%%
+%% If you want to create your own macros, you can do so
+%% using \newcommand. Your macros should appear before
+%% the \begin{document} command.
+%%
+\newcommand{\vdag}{(v)^\dagger}
+\newcommand\aastex{AAS\TeX}
+\newcommand\latex{La\TeX}
+
+%% Reintroduced the \received and \accepted commands from AASTeX v5.2
+% \received{June 1, 2019}
+\revised{January 10, 2019}
+% \accepted{\today}
+
+%% The following command can be used to set the latex table counters.  It
+%% is needed in this document because it uses a mix of latex tabular and
+%% AASTeX deluxetables.  In general it should not be needed.
+%\setcounter{table}{1}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%% The following section outlines numerous optional output that
+%% can be displayed in the front matter or as running meta-data.
+%%
+%% If you wish, you may supply running head information, although
+%% this information may be modified by the editorial offices.
+% \shorttitle{Sample article}
+% \shortauthors{Schwarz et al.}
+%%
+%% You can add a light gray and diagonal water-mark to the first page 
+%% with this command:
+%% \watermark{text}
+%% where "text", e.g. DRAFT, is the text to appear.  If the text is 
+%% long you can control the water-mark size with:
+%% \setwatermarkfontsize{dimension}
+%% where dimension is any recognized LaTeX dimension, e.g. pt, in, etc.
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% This is the end of the preamble.  Indicate the beginning of the
+%% manuscript itself with \begin{document}.
+
+\begin{document}
+
+\title{Here goes the title}
+
+\author{Yoonsoo Kim}
+\noaffiliation
+% \affiliation{American Astronomical Society \\
+% 1667 K Street NW, Suite 800 \\
+% Washington, DC 20006, USA}
+
+% \begin{abstract}
+% \end{abstract}
+
+% \keywords{editorials, notices --- 
+% miscellaneous --- catalogs --- surveys}
+
+\section{Introduction} \label{sec:intro}
+
+\latex\ was written in 1985 by Leslie Lamport who based it on the \TeX\ typesetting language
+which itself was created by Donald E. Knuth in 1978.  In 1988 a suite of
+\latex\ macros were developed to investigate electronic submission and
+publication of AAS Journal articles \citep{1989BAAS...21..780H}.  Shortly
+afterwards, Chris Biemesdefer merged these macros and more into a \latex\
+2.08 style file called \aastex.  These early \aastex\ versions introduced
+many common commands and practices that authors take for granted today.
+Substantial revisions
+were made by Lee Brotzman and Pierre Landau when the package was updated to
+v4.0.  AASTeX v5.0, written in 1995 by Arthur Ogawa, upgraded to \latex\ 2e
+which uses the document class in lieu of a style file.  Other improvements
+to version 5 included hypertext support, landscape deluxetables and
+improved figure support to facilitate electronic submission.  
+\aastex\ v5.2 was released in 2005 and introduced additional graphics
+support plus new mark up to identifier astronomical objects, datasets and
+facilities.
+
+
+\section{Floats} \label{sec:floats}
+
+Floats are non-text items that generally can not be split over a page.
+They also have captions and can be numbered for reference.  Primarily these
+are figures and tables but authors can define their own. \latex\ tries to
+place a float where indicated in the manuscript but will move it later if
+there is not enough room at that location, hence the term ``float''.
+
+Authors are encouraged to embed their tables and figures within the text as
+they are mentioned.  Please do not place the figures and text at the end of
+the article as was the old practice.  Editors and the vast majority of
+referees find it much easier to read a manuscript with embedded figures and
+tables.
+
+Depending on the number of floats and the particular amount of text and
+equations present in a manuscript the ultimate location of any specific
+float can be hard to predict prior to compilation. It is recommended that
+authors textbf{not} spend significant time trying to get float placement
+perfect for peer review.  The AAS Journal's publisher has sophisticated
+typesetting software that will produce the optimal layout during
+production.
+
+Note that authors of Research Notes are only allowed one float, either one
+table or one figure.
+
+For authors that do want to take the time to optimize the locations of
+their floats there are some techniques that can be used.  The simplest
+solution is to placing a float earlier in the text to get the position
+right but this option will break down if the manuscript is altered.
+A better method is to force \latex\ to place a
+float in a general area with the use of the optional {\tt\string [placement
+specifier]} parameter for figures and tables. This parameter goes after
+{\tt\string \begin\{figure\}}, {\tt\string \begin\{table\}}, and
+{\tt\string \begin\{deluxetable\}}.  The main arguments the specifier takes
+are ``h'', ``t'', ``b'', and ``!''.  These tell \latex\ to place the float
+\underline{h}ere (or as close as possible to this location as possible), at
+the \underline{t}op of the page, and at the \underline{b}ottom of the page.
+The last argument, ``!'', tells \latex\ to override its internal method of
+calculating the float position.  A sequence of rules can be created by
+using multiple arguments.  For example, {\tt\string \begin\{figure\}[htb!]}
+tells \latex\ to try the current location first, then the top of the page
+and finally the bottom of the page without regard to what it thinks the
+proper position should be.  Many of the tables and figures in this article
+use a placement specifier to set their positions.
+
+Note that the \latex\ {\tt\string tabular} environment is not a float.  Only
+when a {\tt\string tabular} is surrounded by {\tt\string\begin\{table\}} ...
+{\tt\string\end\{table\}} is it a true float and the rules and suggestions
+above apply.
+
+In AASTeX v6.3 all deluxetables are float tables and thus if they are
+longer than a page will spill off the bottom. Long deluxetables should
+begin with the {\tt\string\startlongtable} command. This initiates a
+longtable environment.  Authors might have to use {\tt\string\clearpage} to
+isolate a long table or optimally place it within the surrounding text.
+
+\subsection{Tables} \label{subsec:tables}
+
+Tables can be constructed with \latex's standard table environment or the
+\aastex's deluxetable environment. The deluxetable construct handles long
+tables better but has a larger overhead due to the greater amount of
+defined mark up used set up and manipulate the table structure.  The choice
+of which to use is up to the author.  Examples of both environments are
+used in this manuscript. 
+
+Tables longer than 200 data lines and complex tables should only have a
+short example table with the full data set available in the machine
+readable format.  The machine readable table will be available in the HTML
+version of the article with just a short example in the PDF. Authors are
+required to indicate in the table comments that the data in machine 
+readable format in the full article.
+Authors are encouraged to create their own machine
+readable tables using the online tool at
+\url{http://authortools.aas.org/MRT/upload.html}.
+
+\aastex\ v6 introduced five new table features that were designed to make
+table construction easier and the resulting display better for AAS Journal
+authors.  The items are:
+
+\begin{enumerate}
+\item Declaring math mode in specific columns,
+\item Column decimal alignment, 
+\item Automatic column header numbering,
+\item Hiding columns, and
+\item Splitting wide tables into two or three parts.
+\end{enumerate}
+
+Full details on how to create each type are given in the following 
+sections. Additional details are available in the AASTeX
+guidelines at \url{http://journals.aas.org/authors/aastex.html}
+
+\subsubsection{Column math mode}
+
+Both the \latex\ tabular and \aastex\ deluxetable require an argument to
+define the alignment and number of columns.  The most common values are
+``c'', ``l'' and ``r'' for \underline{c}enter, \underline{l}eft, and
+\underline{r}ight justification.  If these values are capitalized, e.g.
+``C'', ``L'', or ``R'', then that specific column will automatically be in math
+mode meaning that \$s are not required.  Note that having embedded dollar
+signs in the table does not affect the output. 
+
+\subsubsection{Decimal alignment}
+
+Aligning a column by the decimal point can be difficult with only center,
+left, and right justification options.  It is possible to use phantom calls
+in the data, e.g. {\tt\string\phn}, to align columns by hand but this can
+be tedious in long or complex tables.  To address this \aastex\ introduces
+the {\tt\string\decimals} command and a new column justification option,
+``D'', to align data in that column on the decimal.  In deluxetable the
+{\tt\string\decimals} command is invoked before the {\tt\string\startdata}
+call but can be anywhere in \latex's tabular environment.  
+
+Two other important thing to note when using decimal alignment is that each
+decimal column \textit{must end with a space before the ampersand}, e.g.
+``\&\&'' is not allowed.  Empty decimal columns are indicated with a decimal,
+e.g. ``.''.  Do not use deluxetable's {\tt\string\nodata} command.
+
+The ``D'' alignment token works by splitting the column into two parts on the
+decimal.  While this is invisible to the user one must be aware of how it
+works so that the headers are accounted for correctly.  All decimal column
+headers need to span two columns to get the alignment correct. This can be
+done with a multicolumn call, e.g {\tt\string\multicolumn2c\{\}} or
+{\tt\string\multicolumn\{2\}\{c\}\{\}}, or use the new
+{\tt\string\twocolhead\{\}} command in deluxetable.  Since \latex\ is
+splitting these columns into two it is important to get the table width
+right so that they appear joined on the page.  You may have to run the
+\latex\ compiler twice to get it right.  
+
+\subsubsection{Automatic column header numbering} \label{subsubsec:autonumber}
+
+The command {\tt\string\colnumbers} can be included to automatically number
+each column as the last row in the header. Per the AAS Journal table format
+standards, each column index numbers will be surrounded by parentheses. In
+a \latex\ tabular environment the {\tt\string\colnumbers} should be invoked
+at the location where the author wants the numbers to appear, e.g. after
+the last line of specified table header rows. In deluxetable this command
+has to come before {\tt\string\startdata}.  {\tt\string\colnumbers} will
+not increment for columns hidden by the ``h'' command, see Section
+\ref{subsubsec:hide}. 
+
+Note that when using decimal alignment in a table the command 
+{\tt\string\decimalcolnumbers} must be used instead of 
+{\tt\string\colnumbers} and {\tt\string\decimals}. 
+
+\subsubsection{Hiding columns} \label{subsubsec:hide}
+
+Entire columns can be \underline{h}idden from display simply by changing
+the specified column identifier to ``h''.  In the \latex\ tabular environment
+this column identifier conceals the entire column including the header
+columns.   In \aastex's deluxetables the header row is specifically
+declared with the {\tt\string\tablehead} call and each header column is
+marked with {\tt\string\colhead} call.  In order to make a specific header
+disappear with the ``h'' column identifier in deluxetable use 
+{\tt\string\nocolhead} instead to suppress that particular column header.
+
+Authors can use this option in many different ways.  Since column data can
+be easily suppressed authors can include extra information and hid it
+based on the comments of co-authors or referees.  For wide tables that will
+have a machine readable version, authors could put all the information in
+the \latex\ table but use this option to hid as many columns as needed until
+it fits on a page. This concealed column table would serve as the
+example table for the full machine readable version.  Regardless of how
+columns are obscured, authors are responsible for removing any unneeded
+column data or alerting the editorial office about how to treat these
+columns during production for the final typeset article.
+
+Table \ref{tab:messier} provides some basic information about the first ten
+Messier Objects and illustrates how many of these new features can be used
+together.  It has automatic column numbering, decimal alignment of the
+distances, and one concealed column.  The Common name column
+is the third in the \latex\ deluxetable but does not appear when the article
+is compiled. This hidden column can be shown simply by changing the ``h'' in
+the column identifier preamble to another valid value.  This table also
+uses {\tt\string\tablenum} to renumber the table because a \latex\ tabular
+table was inserted before it.
+
+\begin{deluxetable*}{cchlDlc}
+\tablenum{1}
+\tablecaption{Fun facts about the first 10 messier objects\label{tab:messier}}
+\tablewidth{0pt}
+\tablehead{
+\colhead{Messier} & \colhead{NGC/IC} & \nocolhead{Common} & \colhead{Object} &
+\multicolumn2c{Distance} & \colhead{} & \colhead{V} \\
+\colhead{Number} & \colhead{Number} & \nocolhead{Name} & \colhead{Type} &
+\multicolumn2c{(kpc)} & \colhead{Constellation} & \colhead{(mag)}
+}
+\decimalcolnumbers
+\startdata
+M1 & NGC 1952 & Crab Nebula & Supernova remnant & 2 & Taurus & 8.4 \\
+M2 & NGC 7089 & Messier 2 & Cluster, globular & 11.5 & Aquarius & 6.3 \\
+M3 & NGC 5272 & Messier 3 & Cluster, globular & 10.4 & Canes Venatici &  6.2 \\
+M4 & NGC 6121 & Messier 4 & Cluster, globular & 2.2 & Scorpius & 5.9 \\
+M5 & NGC 5904 & Messier 5 & Cluster, globular & 24.5 & Serpens & 5.9 \\
+M6 & NGC 6405 & Butterfly Cluster & Cluster, open & 0.31 & Scorpius & 4.2 \\
+M7 & NGC 6475 & Ptolemy Cluster & Cluster, open & 0.3 & Scorpius & 3.3 \\
+M8 & NGC 6523 & Lagoon Nebula & Nebula with cluster & 1.25 & Sagittarius & 6.0 \\
+M9 & NGC 6333 & Messier 9 & Cluster, globular & 7.91 & Ophiuchus & 8.4 \\
+M10 & NGC 6254 & Messier 10 & Cluster, globular & 4.42 & Ophiuchus & 6.4 \\
+\enddata
+\tablecomments{This table ``hides'' the third column in the \latex\ when compiled.
+The Distance is also centered on the decimals.  Note that when using decimal
+alignment you need to include the {\tt\string\decimals} command before
+{\tt\string\startdata} and all of the values in that column have to have a
+space before the next ampersand.}
+\end{deluxetable*}
+
+\subsubsection{Splitting a table into multiple horizontal components}
+
+Since the AAS Journals are now all electronic with no print version there is
+no reason why tables can not be as wide as authors need them to be.
+However, there are some artificial limitations based on the width of a
+print page.  The old way around this limitation was to rotate into 
+landscape mode and use the smallest available table font
+sizes, e.g. {\tt\string\tablewidth}, to get the table to fit.
+Unfortunately, this was not always enough but now along with the hide column
+option outlined in Section \ref{subsubsec:hide} there is a new way to break
+a table into two or three components so that it flows down a page by
+invoking a new table type, splittabular or splitdeluxetable. Within these
+tables a new ``B'' column separator is introduced.  Much like the vertical
+bar option, ``$\vert$'', that produces a vertical table lines 
+the new ``B'' separator indicates where to \underline{B}reak
+a table.  Up to two ``B''s may be included.
+
+Table 2 % \ref{tab:deluxesplit} this freaks it out when it is used!
+shows how to split a wide deluxetable into three parts with
+the {\tt\string\splitdeluxetable} command.  The {\tt\string\colnumbers}
+option is on to show how the automatic column numbering carries through the
+second table component, see Section \ref{subsubsec:autonumber}.
+
+\begin{splitdeluxetable*}{lccccBcccccBcccc}
+\tabletypesize{\scriptsize}
+\tablewidth{0pt} 
+\tablenum{5}
+\tablecaption{Measurements of Emission Lines: two breaks \label{tab:deluxesplit}}
+\tablehead{
+\colhead{Model} & \colhead{Component}& \colhead{Shift} & \colhead{FWHM} &
+\multicolumn{10}{c}{Flux} \\
+\colhead{} & \colhead{} & \colhead{($\rm
+km~s^{-1}$)}& \colhead{($\rm km~s^{-1}$)} & \multicolumn{10}{c}{($\rm
+10^{-17}~erg~s^{-1}~cm^{-2}$)} \\
+\cline{5-14}
+\colhead{} & \colhead{} &
+\colhead{} & \colhead{} & \colhead{Ly$\alpha$} & \colhead{N\,{\footnotesize
+V}} & \colhead{Si\,{\footnotesize IV}} & \colhead{C\,{\footnotesize IV}} &
+\colhead{Mg\,{\footnotesize II}} & \colhead{H$\gamma$} & \colhead{H$\beta$}
+& \colhead{H$\alpha$} & \colhead{He\,{\footnotesize I}} &
+\colhead{Pa$\gamma$}
+} 
+\colnumbers
+\startdata 
+{       }& BELs& -97.13 &    9117$\pm      38$&    1033$\pm      33$&$< 35$&$<     166$&     637$\pm      31$&    1951$\pm      26$&     991$\pm 30$&    3502$\pm      42$&   20285$\pm      80$&    2025$\pm     116$& 1289$\pm     107$\\ 
+{Model 1}& IELs& -4049.123 & 1974$\pm      22$&    2495$\pm      30$&$<     42$&$<     109$&     995$\pm 186$&      83$\pm      30$&      75$\pm      23$&     130$\pm      25$& 357$\pm      94$&     194$\pm      64$& 36$\pm      23$\\
+{       }& NELs& \nodata &     641$\pm       4$&     449$\pm 23$&$<      6$&$<       9$&       --            &     275$\pm      18$& 150$\pm      11$&     313$\pm      12$&     958$\pm      43$&     318$\pm 34$& 151$\pm       17$\\
+\hline
+{       }& BELs& -85 &    8991$\pm      41$& 988$\pm      29$&$<     24$&$<     173$&     623$\pm      28$&    1945$\pm 29$&     989$\pm      27$&    3498$\pm      37$&   20288$\pm      73$& 2047$\pm     143$& 1376$\pm     167$\\
+{Model 2}& IELs& -51000 &    2025$\pm      26$& 2494$\pm      32$&$<     37$&$<     124$&    1005$\pm     190$&      72$\pm 28$&      72$\pm      21$&     113$\pm      18$&     271$\pm      85$& 205$\pm      72$& 34$\pm      21$\\
+{       }& NELs& 52 &     637$\pm      10$&     477$\pm 17$&$<      4$&$<       8$&       --            &     278$\pm      17$& 153$\pm      10$&     317$\pm      15$&     969$\pm      40$&     325$\pm 37$&
+     147$\pm       22$\\
+\enddata
+\tablecomments{This is an example of how to split a deluxetable. You can
+split any table with this command into two or three parts.  The location of
+the split is given by the author based on the placement of the ``B''
+indicators in the column identifier preamble.  For more information please
+look at the new \aastex\ instructions.}
+\end{splitdeluxetable*}
+
+\subsection{Figures\label{subsec:figures}}
+
+%% The "ht!" tells LaTeX to put the figure "here" first, at the "top" next
+%% and to override the normal way of calculating a float position
+\begin{figure}[ht!]
+\plotone{cost.pdf}
+\caption{The subscription (squares) and author publication (asterisks) 
+costs from 1991 to 2013. Subscription cost are on the left Y axis while
+the author costs are on the right Y axis. All numbers in US dollars and
+adjusted for inflation. The author charges also account for the change
+from page charges to digital quanta in April 2011.  \label{fig:general}}
+\end{figure}
+
+Authors can include a wide number of different graphics with their articles
+but encapsulated postscript (EPS) or portable document format (PDF) are
+encouraged. These range from general figures all authors are familiar with
+to new enhanced graphics that can only be fully experienced in HTML.  The
+later include figure sets, animations and interactive figures.  All
+enhanced graphics require a static two dimensional representation in the
+manuscript to serve as the example for the reader. All figures should
+include detailed and descriptive captions.  These captions are absolutely
+critical for readers for whom the enhanced figure is inaccessible either
+due to a disability or offline access.  This portion of the article
+provides examples for setting up all these types in with the latest version
+of \aastex.
+
+\subsection{General figures\label{subsec:general}}
+
+\aastex\ has a {\tt\string\plotone} command to display a figure consisting
+of one EPS/PDF file.  Figure \ref{fig:general} is an example which shows
+the approximate changes in the subscription costs and author publication
+charges from 1991 to 2013 in the AAS Journals.  For a general figure
+consisting of two EPS/PDF files the {\tt\string\plottwo} command can be
+used to position the two image files side by side.
+
+Both {\tt\string\plotone} and {\tt\string\plottwo} take a
+{\tt\string\caption} and an optional {\tt\string\figurenum} command to
+specify the figure number\footnote{It is better to not use
+{\tt\string\figurenum} and let LaTeX auto-increment all the figures. If you
+do use this command you need to mark all of them accordingly.}.  Each is
+based on the {\tt\string graphicx} package command,
+{\tt\string\includegraphics}.  Authors are welcome to use
+{\tt\string\includegraphics} along with its optional arguments that control
+the height, width, scale, and position angle of a file within the figure.
+More information on the full usage of {\tt\string\includegraphics} can be
+found at \break
+\url{https://en.wikibooks.org/wiki/LaTeX/Importing\_Graphics\#Including\_graphics}.
+
+\subsection{Grid figures}
+
+Including more than two EPS/PDF files in a single figure call can be tricky to
+easily format.  To make the process easier for authors \aastex\ v6 offers
+{\tt\string\gridline} which allows any number of individual EPS/PDF file
+calls within a single figure.  Each file cited in a {\tt\string\gridline}
+will be displayed in a row.  By adding more {\tt\string\gridline} calls an
+author can easily construct a matrix X by Y individual files as a
+single general figure.
+
+For each {\tt\string\gridline} command a EPS/PDF file is called by one of
+four different commands.  These are {\tt\string\fig},
+{\tt\string\rightfig}, {\tt\string\leftfig}, and {\tt\string\boxedfig}.
+The first file call specifies no image position justification while the
+next two will right and left justify the image, respectively.  The
+{\tt\string\boxedfig} is similar to {\tt\string\fig} except that a box is
+drawn around the figure file when displayed. Each of these commands takes
+three arguments.  The first is the file name.  The second is the width that
+file should be displayed at.  While any natural \latex\ unit is allowed, it
+is recommended that author use fractional units with the
+{\tt\string\textwidth}.  The last argument is text for a subcaption.
+
+% Figure \ref{fig:pyramid} shows an inverted pyramid of individual
+% figure constructed with six individual EPS files using the
+% {\tt\string\gridline} option.
+% \begin{figure*}
+% \gridline{\fig{V2491_Cyg.pdf}{0.3\textwidth}{(a)}
+%           \fig{HV_Cet.pdf}{0.3\textwidth}{(b)}
+%           \fig{LMC_2009.pdf}{0.3\textwidth}{(c)}
+%           }
+% \gridline{\fig{RS_Oph.pdf}{0.3\textwidth}{(d)}
+%           \fig{U_Sco.pdf}{0.3\textwidth}{(e)}
+%           }
+% \gridline{\fig{KT_Eri.pdf}{0.3\textwidth}{(f)}}
+% \caption{Inverted pyramid figure of six individual files. The nova are
+% (a) V2491 Cyg, (b) HV Cet, (c) LMC 2009, (d) RS Oph, (e) U Sco, and (f) 
+% KT Eri. These individual figures are taken from \citet{2011ApJS..197...31S}.
+% \label{fig:pyramid}}
+% \end{figure*}
+
+\subsection{Enhanced graphics}
+
+Enhanced graphics have an example figure to serve as an example for the
+reader and the full graphical item available in the published HTML article.
+This includes Figure sets, animations, and interactive figures. The 
+Astronomy Image Explorer (\url{http://www.astroexplorer.org/}) provides 
+access to all the figures published in the AAS Journals since they offered
+an electronic version which was in the mid 1990s. You can filter image
+searches by specific terms, year, journal, or type. The type filter is 
+particularly useful for finding all published enhanced graphics. As of
+June 2019 there are over 3000 videos, 1000 figure sets, and 65 interactive
+figures. The next sections describe how to include these types of graphics
+in your own manuscripts.
+
+\subsubsection{Figure sets}
+
+The grid commands given above works great for a limited set of individual
+figure files but what do you do if you have many 10s or 100s or even 1000s of
+individual figure files? Figure sets represents a virtual flip book of a
+large group of similar style figures.  The derived PDF article will only
+shows an example figure while the enhanced content is available in the
+figure set in the HTML edition.  The advantage of a figure set gives the
+reader the ability to easily sort through a large collection to find
+individual component figures.  The advantage to the author is that grouping
+similar figures into a figure set can result in significant cost savings in
+terms of reduced publication charges, see Appendix B. All of the figure set
+components, along with their html framework, are also available to the reader
+for download in a single .tar.gz package.
+
+Special \latex\ mark up is required to create a figure set.  Prior to
+\aastex\ v6 the underlying mark up commands had to be inserted by hand
+but is now included.  Note that when an article with figure set is compiled
+in \latex\ none of the component figures are shown and a floating Figure
+Set caption will appear in the resulting PDF.
+
+
+Authors are encouraged to use an online tool at
+\url{http://authortools.aas.org/FIGSETS/make-figset.html} to generate their
+own specific figure set mark up to incorporate into their \latex\ articles.
+
+\subsubsection{Animations \label{animation}}
+
+Authors may, and are in fact encouraged, to include animations in their
+manuscripts. The video will stream inline with the published article and
+also be available for download.  When writing the manuscript, a stand alone
+figure is necessary to serve as an example for the reader.  Ideally, this
+is a single still frame from the animation but in some case the animation
+may only represent a small portion of the example figure, say one many
+panels as shown in Figure \ref{fig:video}. Regardless, it is very
+important that the author provide descriptive text in the figure caption
+including start and stop times and the video duration. Authors should
+review the AAS animation guidelines in the graphics guide at
+\url{https://journals.aas.org/graphics-guide/#animations}.
+
+\begin{figure}
+\begin{interactive}{animation}{movie.mp4}
+\plotone{f4.pdf}
+\end{interactive}
+\caption{Figure 1 from \citet{2018ApJ...868L..33L}. AIA 171\AA (a,b), 
+AIA 131\AA (c), and AIA 304\AA images are shown. The red rectangle 
+in (a) shows the field of view of the other panels. An animation of 
+panels (b-d) is available. It covers 8 hours of observing beginning 
+at 01:00 UT on 2012 January 19. The video duration is 20 seconds. 
+\label{fig:video}}
+\end{figure}
+
+Animations and interactive figures (Section \ref{sec:interactive}) should 
+use the {\tt\string\begin{interactive}} environment in the figure call. This 
+environment
+places a blue border around the figure to indicate that the figure is 
+enhanced in the published HTML article. The
+command also serves to alert the publisher what files are used to generate
+the dynamic HTML content. {\tt\string\interactive} takes two arguments. The
+first details the type and currently only three are allowed. The types are
+{\tt\string js} for generic javascript interactive figures, 
+{\tt\string animation} for inline videos, and 
+{\tt\string timeseries} for interactive light curves produced
+by astropy \citet{2013A&A...558A..33A}\footnote{To be release in the 
+summer of 2019}. If these types are not provide the compiler will issue an
+error and quit. The second argument is the file that produces the enhanced
+feature in the HTML article.
+
+\subsubsection{Interactive figures \label{sec:interactive}}
+
+Interactive figures give the reader the ability to manipulate the
+information contained in an image which can add clarity or help further the
+author's narrative.  These figures consist of two parts, a static 
+representative figure for the manuscript and the dynamic javascript plus
+HTML framework that allows for interactive control.
+
+An example of an interactive figure is a 3D model.
+The underlying figure is a X3D file while x3dom.js is the javascript driver
+that displays it. An author created interface is added via a html wrapper.
+The first 3D model published by the AAS Journals using this technique was
+\citet{2014ApJ...793..127V}.  
+
+% Figure \ref{fig:interactive} provides an interactive example which can be
+run locally to demonstrate how a simple javascript plus html interface
+allows a reader to switch between figures. The necessary files for this
+particular interactive figure are in the {\tt\string interactive.tar.gz}
+file included with this package. Unpack the file and point the browser to
+the local html file. In this case, the javascript that runs the interactive
+buttons is embedded in the html file but it could just as easily be calls
+to external javascript libraries. Ideally, the javascript should be
+included with the submitted package of interactive files to minimize
+external dependencies within the published article.
+
+% \begin{figure}
+% \begin{interactive}{js}{interactive.tar.gz}
+% \plotone{f5.pdf}
+% \end{interactive}
+% \caption{Figure 4 from \citet{2018AJ....156...82C}. \emph{Upper panel}: the
+% cumulative median observing time to measure the $3\sigma$ RV masses of TESS
+% planets as a function of host star spectral type and up to $10^3$ hours.
+% The \emph{dashed blue curves} represent the results from the optical
+% spectrograph whereas the \emph{solid red curves} represent the near-IR
+% spectrograph. \emph{Lower panel}: the time derivative of the cumulative
+% observing time curves used to indicate the RV planet detection efficiency.
+% The \emph{horizontal dashed line} highlights the value of the detection
+% efficiency at 20 hours per detection.  Note that unlike the lower panels,
+% the upper panels do not share a common ordinate due to the differing number
+% of planet detections around stars in each spectral type bin. The
+% interactive version has two buttons that allows one to turn the optical and
+% NIR layers. \label{fig:interactive}}
+% \end{figure}
+
+
+\section{Displaying mathematics} \label{sec:displaymath}
+
+The most common mathematical symbols and formulas are in the amsmath
+package.  \aastex\ requires this package so there is no need to
+specifically call for it in the document preamble.  Most modern \latex\
+distributions already contain this package.  If you do not have this
+package or the other required packages, revtex4-1, latexsym, graphicx,
+amssymb, longtable, and epsf, they can be obtained from 
+\url{http://www.ctan.org}
+
+Mathematics can be displayed either within the text, e.g. $E = mc^2$, or
+separate from in an equation.  In order to be properly rendered, all inline
+math text has to be declared by surrounding the math by dollar signs (\$).
+
+A complex equation example with inline math as part of the explanation
+follows.
+
+\begin{equation}
+\bar v(p_2,\sigma_2)P_{-\tau}\hat a_1\hat a_2\cdots
+\hat a_nu(p_1,\sigma_1) ,
+\end{equation}
+where $p$ and $\sigma$ label the initial $e^{\pm}$ four-momenta
+and helicities $(\sigma = \pm 1)$, $\hat a_i=a^\mu_i\gamma_\nu$
+and $P_\tau=\frac{1}{2}(1+\tau\gamma_5)$ is a chirality projection
+operator $(\tau = \pm1)$.  This produces a single line formula.  \latex\ will
+auto-number this and any subsequent equations.  If no number is desired then
+the {\tt\string equation} call should be replaced with {\tt\string displaymath}.
+
+\latex\ can also handle a a multi-line equation.  Use {\tt\string eqnarray}
+for more than one line and end each line with a
+\textbackslash\textbackslash.  Each line will be numbered unless the
+\textbackslash\textbackslash\ is preceded by a {\tt\string\nonumber}
+command.  Alignment points can be added with ampersands (\&).  There should be
+two ampersands per line. In the examples they are centered on the equal
+symbol.
+
+
+% \acknowledgments
+% We thank ...
+
+\vspace{5mm}
+\appendix
+
+\section{Sample Appendix Section}
+
+This is appendix
+
+\bibliography{sample63}{}
+\bibliographystyle{aasjournal}
+
+%% This command is needed to show the entire author+affiliation list when
+%% the collaboration and author truncation commands are used.  It has to
+%% go at the end of the manuscript.
+%\allauthors
+
+%% Include this line if you are using the \added, \replaced, \deleted
+%% commands to see a summary list of all changes at the end of the article.
+%\listofchanges
+
+\end{document}
+
+% End of file `sample63.tex'.
