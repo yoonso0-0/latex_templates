@@ -1,0 +1,150 @@
+\documentclass[11pt, oneside]{article}
+\usepackage{amssymb, amsmath, enumitem, mathtools}
+\usepackage{geometry}
+\geometry{
+    letterpaper,
+    top=1.2in,
+    bottom=1.in,
+    left=1in,
+    right=1in,
+    headheight=15pt,
+    footskip=30pt
+}
+\usepackage{textpos,siunitx,listings}
+\usepackage{bm}
+\usepackage{tensor, braket}
+\usepackage{graphicx}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+
+% \usepackage{booktabs}
+% \usepackage{bookmark}
+%\usepackage{unicode-math}
+
+\usepackage[colorlinks]{hyperref}
+\hypersetup{
+    linkcolor=red,
+    citecolor=blue,
+    filecolor=magenta,      
+    urlcolor=magenta
+}
+
+\usepackage{comment}
+\usepackage{refcount}
+% \numberwithin{equation}{section}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+% \fancyhf{}
+\lhead{Neutrino oscillation} \rhead{}
+% \cfoot{\thepage}
+
+\usepackage{xcolor}
+
+% \usepackage[backend=biber,
+    % style=chicago-authordate,
+%   ]{biblatex}
+% \addbibresource{cce.bib}
+
+\usepackage{natbib}
+% \bibliographystyle{apalike}
+% \bibliographystyle{abbrvnat}
+% \setcitestyle{author,open={(},close={)}}
+
+\title{
+    \vspace{-2em}
+    {\Large\MakeUppercase{Neutrino oscillation}}
+    % \vspace{-.5em}
+}
+\author{
+    {\large Yoonsoo Kim, Ph139, WI20-21}
+}
+\date{}
+
+\renewcommand{\baselinestretch}{1.2}
+\newcommand{\pardev}[2]{\frac{\partial #1}{\partial #2}}
+\renewcommand{\div}{\nabla\cdot}
+\newcommand{\christoffel}[3]{\Gamma^{#1}_{#2#3}}
+
+% \usepackage{palatino}
+% \usepackage{charter}
+% \usepackage{fourier}
+% \usepackage{helvet}
+
+\usepackage{sectsty}
+
+\sectionfont{\fontsize{12}{12}\bfseries}
+% \sectionfont{\fontsize{12}{10}}
+% \subsectionfont{\fontsize{12}{11}\bfseries\sffamily}
+\subsubsectionfont{\fontsize{10}{10}}
+
+\begin{document}
+
+
+\maketitle
+
+% ---------------------------------------------------------------------------
+%                    Section 1
+% ---------------------------------------------------------------------------
+\section{Overview}
+
+Neutrino oscillation is a phenomena in which neutrinos can convert their lepton flavor (muon, electron, tau) into another one. In other words, each lepton number is in general not a seperately conserved quantity.
+
+In the Brookhaven Solar Neutrino Experiment (also referred to as the Davis experiment) in late 1960s, the observed number of solar neutrinos turned out to be only one third of what was estimated from standard solar model, which is the famous \emph{solar neutrino problem}.\footnote{The final result from this experiment is about 2.5 \textsf{SNU}, where 1 \textsf{SNU} (solar neutrino unit) equals  $10^{-36}$ captures per second per atom. The theoretical prediction was around 8.5 SNU.} 
+In 1968, Bruno Pontecorvo proposed the idea that neutrinos change their identities. The explanation is quite simple -- neutrinos participate in weak processes as flavor eigenstates ($\nu_e, \nu_\mu, \nu_\tau$) while they travel as mass eigenstates. The flavor eigenstates, which we detect experimentally, are mixed states of three stationary mass eigenstates with appropriate mixing angles. The differences of phase evolution rate between the three mass eigenstates result in the observed oscillations of flavor eigenstates.
+
+% \begin{figure}[ht]
+% \begin{center}
+%     \includegraphics[width=.5\linewidth]{flavor.png}
+%     \caption{Neutrino changing its flavor (img credit : Nobelprize.org)}
+% \end{center}
+% \end{figure}
+
+As larger and more sophisticated detectors were constructed and taken into operation, experimental evidences for neutrino oscillation stacked up. Super-Kamiokande detector, located in a mine in Japan, became operational in 1996, while Sudbury Neutrino Observatory (SNO), built in a mine in Canada, began its observations in 1999. A mutual comparison between their data published in 2001 and a subsequent result from SNO published in 2002 confirmed the neutrino oscillation. Takaaki Kajita and Arthur B. McDonald were awarded Nobel Prize in 2015, "for the discovery of neutrino oscillations, which shows that neutrinos have mass".
+
+
+
+
+% ---------------------------------------------------------------------------
+%                    Section 3
+% ---------------------------------------------------------------------------
+\section{Future experiments}
+
+Several future experiments for neutrinos are under preparation.
+
+\begin{itemize}
+    \item The Cubic Kilometre Neutrino Telescope (KM3NeT) will be installed at the bottom of the Mediterranean Sea near France (ANTARES), Italy (NEMO), and Greece (NESTOR), with water Cherenkov detectors. Its prime target is astrophysical neutrino sources.
+    \item Precision IceCube Next Generation Upgrade (PINGU) is an upgrade to IceCube facility, and its primary goal is to determine the neutrino mass hierarchy: the relative ordering of the neutrino masses.
+    \item Hyper-Kamiokande is a successor to Super-Kamiokande and planned to construct an order-of-magnitude-larger tank than its predecessor.
+    Hyper-Kamiokande is expected to begin data collection from 2027, investigating proton decay, CP violation, and also neutrinos from supernovae.
+    \item The Deep Underground Neutrino Experiment (DUNE) will consist of two neutrino detectors; one near the beam source at the FermiLab, and another at a kilometer underground at the Sanford Underground Research Laboratory. It will be a 1,300 km long-baseline experiment. Scientic goals include proton decay, search for 'new' type of neutrinos, and determining the neutrino mass hierarchy.
+\end{itemize}
+
+
+\vspace{1em}
+\section*{Afterword}
+In the Griffiths textbook, the author used $E^2 = m^2 c^4 + |\mathbf{p}|^2c^2$ to conceptually explain the physical ground of neutrino oscillation.
+This raised me a question how neutrino oscillation would possibly change inside matter with very high pressure or density e.g. core of neutron stars.
+
+What if such harsh environment requires another (possibly unknown) term for the Hamiltonian (or Lagrangian) for describing neutrinos?
+Can the mutual conversion between neutrinos be either catalyzed or suppressed under such extreme conditions? Or, can it be possible that neutrinos (and anti-neutrinos) would undergo some process beyond our current model? If there are such anomalies, cataclysmic astrophysical events such as neutron star mergers will provide a good place to probe new physics.
+(I am not sure if these are currently being studied by high energy theorists, but I believe it can be very interesting topic in particle astrophysics!)
+
+
+
+\vspace{2em}
+This course was a great opportunity for me to learn and go through many aspects of particle physics. Thank you Alan and Maria!
+
+
+
+\vfill
+\nocite{*}
+% \bibliographystyle{apalike}
+\bibliographystyle{abbrvnat}
+\bibliography{references}
+
+
+\end{document}
+
+
+
