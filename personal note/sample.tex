@@ -1,0 +1,310 @@
+\documentclass[11pt, oneside]{article}
+\usepackage{amssymb, amsmath, enumitem, mathtools}
+\usepackage{geometry}
+\geometry{
+    letterpaper,
+    top=1.in,
+    bottom=1.1in,
+    left=.9in,
+    right=.9in,
+    headheight=15pt,
+    footskip=40pt
+}
+\setlength{\columnsep}{2em}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{textpos,siunitx,listings}
+\usepackage{bm, csquotes, comment}
+\usepackage{tensor, braket}
+\usepackage{graphicx, xcolor}
+\usepackage{setspace}
+% \usepackage{booktabs, bookmark}
+% \usepackage{unicode-math}
+
+\usepackage[colorlinks]{hyperref}
+\hypersetup{
+    linkcolor=blue,
+    citecolor=blue,
+    filecolor=magenta,
+    urlcolor=teal
+}
+
+\usepackage{refcount}
+% \numberwithin{equation}{section}
+
+\setlist[itemize]{
+    itemsep=-0.1em,
+    label={$\boldsymbol{\cdot}$},
+    leftmargin=1.5em,
+    labelsep=.7em,
+    topsep=0pt
+}
+
+\usepackage{natbib}
+% \setcitestyle{author,open={(},close={)}}
+
+% \newcommand{\pardev}[2]{\frac{\partial #1}{\partial #2}}
+% \renewcommand{\div}{\nabla\cdot}
+% \newcommand{\christoffel}[3]{\Gamma^{#1}_{#2#3}}
+\newcommand{\cf}{\noindent\textsf{cf) }}
+\newcommand{\solarmass}{M_\odot}
+
+% \usepackage{palatino}
+% \usepackage{tgtermes}
+% \usepackage{tgheros}
+% \usepackage{charter}
+\usepackage{times}
+% \usepackage{fourier}
+% \usepackage{utopia}
+
+\usepackage{helvet}
+
+% ---------------------------------------------------------------------------
+%
+%           FORMATTING
+% 
+% ---------------------------------------------------------------------------
+\usepackage{titling}
+% \pretitle{\begin{flushleft}\LARGE} % makes document title flush right
+% \posttitle{\end{flushleft}}
+% \preauthor{\begin{flushleft}\large} % makes author flush right
+% \postauthor{\end{flushleft}}
+% \predate{\begin{flushright}\large} % makes date title flush right
+% \postdate{\end{flushright}}
+
+% -------- toc formatting
+\usepackage{tocloft}
+% \cftsetindents{section}{0em}{2em}
+% \cftsetindents{subsection}{1em}{3em}
+% \makeatletter
+% \renewcommand{\l@subsection}{\@dottedtocline{1}{4.0em}{3.6em}}
+% \renewcommand{\l@subsection}{\@dottedtocline{2}{4.0em}{3.6em}}
+% \renewcommand{\l@subsubsection}{\@dottedtocline{3}{7.4em}{4.5em}}
+% \makeatother
+
+% -------- indentation
+% \usepackage{indentfirst}
+\setlength{\parindent}{0pt}
+% \usepackage{parskip}
+\setlength{\parskip}{.2em}
+
+\setlength{\footnotesep}{.5em}
+% \setstretch{1.3}
+% \renewcommand{\baselinestretch}{1.0}
+
+% -------- section titles
+\usepackage{sectsty, titlecaps}
+\sectionfont{\vspace{2em}\fontsize{12}{12}\centering\bfseries}
+\subsectionfont{\vspace{1em}\fontsize{11}{10}\normalfont\MakeUppercase}
+\subsubsectionfont{\vspace{.0em}\fontsize{10}{10}\normalfont\em}
+
+\usepackage{titlesec}
+% \titlelabel{\thetitle.\hspace{1em}}
+\renewcommand\thesection{\Roman{section}}
+\renewcommand\thesubsection{\arabic{subsection}}
+% \renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
+
+% \usepackage[style=nature, sorting=ynt]{biblatex}
+% \addbibresource{references.bib}
+% \DeclareFieldFormat{labelnumberwidth}{}
+% \setlength{\biblabelsep}{0pt}
+
+% ---------------------------------------------------------------------------
+%
+%           DOCUMENT INFO
+% 
+% ---------------------------------------------------------------------------
+\title{
+%     \vspace{-3em}
+    {\bfseries template - personal notes}
+    % \vspace{-.5em}
+}
+
+\author{
+    Yoonsoo Kim
+    \\[1em]
+    Last revision : \today
+%     \vspace{.5em}
+%     \hrule
+    \vspace{-5em}
+}
+\date{}
+
+% -------- header 
+\usepackage{fancyhdr}
+% \pagestyle{fancy}
+% \fancyhf{}
+% \lhead{BHL - literature review}
+\rhead{}
+% \cfoot{\thepage}
+
+\begin{document}
+
+\maketitle
+
+% \setstretch{1.2}
+\setcounter{tocdepth}{2}
+\tableofcontents
+% \setstretch{1.0}
+% \vspace{1em}
+% \hrule
+% \vspace{1em}
+
+\newpage
+
+% ---------------------------------------------------------------------------
+% 
+%                    Section
+% 
+% ---------------------------------------------------------------------------
+\section{Stellar evolution remnant}
+
+
+\begin{description}[style=multiline, leftmargin=8em,
+    labelindent=0em, font=\textbf]
+\item[Mass prescriptions] \begin{itemize}
+    \item WD : $<8\solarmass$
+    \item NS : $8-20\solarmass$
+    \item BH : not well constrained?
+\end{itemize}
+\end{description}
+
+
+\begin{description}[style=multiline, leftmargin=8em,
+    labelindent=0em, font=\textbf]
+\item[Natal kicks] \begin{itemize}
+     \item BH : not well constrained
+     \item NS : Maxwellian, $\sigma \sim 270\si[]{\kilo\meter\per\second}$?
+     (see \cite{Hobbs2005})
+\end{itemize}
+\end{description}
+
+
+% ---------------------------------------------------------------------------
+% 
+%                    Section
+% 
+% ---------------------------------------------------------------------------
+\section{Neutron stars}
+
+$M\sim 1.4\solarmass$, $R\sim 10\si[]{\km}$.
+
+Highest mass observed : $2.14^{+0.10}_{-0.09}\solarmass$ \citep{NANOGrav2019}
+
+In general, softer equation of state yields more compact stars, small radii,
+relatively small max mass. See \cite{Ozel2016} for a review.
+
+absolute upper limit to the NS spin frequency 
+- mass shedding limit - constraint on the EOS 
+about 1000Hz
+
+the highest observed spin rate  : 716Hz \citep{Hessels2006}
+
+
+% --------------------------------------------------- %
+%               subsection
+% --------------------------------------------------- %
+\subsection{Formation}
+
+Progenitor : Type II SNe ($ > 8 \solarmass$). Neutrinos play a crucial role in
+the collapse. Interior of proto-NS lose energy rapidly by neutrino emission.
+
+Gravitational binding energy released during collapse is about 
+\begin{equation}
+    \frac{3}{5}\frac{GM^2}{R} \sim 0.1 Mc^2
+    \, \sim 10^{53}\text{erg}
+\end{equation}
+
+Kinetic energy of the expanding SN remnant is about $\sim 10^{51}\text{erg}$;
+nearly all the energy is carried off by neutrinos and anti-neutrinos.
+
+
+% --------------------------------------------------- %
+%               subsection
+% --------------------------------------------------- %
+\subsection{State of matter}
+
+Typical Fermi energies of a NS are of the order MeV $\sim
+10^{10}\si[]{\kelvin}$, therefore the temperature becomes only important when it
+is very high; otherwise $T=0$ (cold matter) is a good approximation.
+
+There is no `pure' neutron stars\footnote{Free neutron lifetime is about 15
+minutes \citep{UCNtau2021}.} - an actual NS contains a mixture of $n$, $p$,
+and $e$.
+
+$\beta$-decay and inverse $\beta$-decay : 
+\begin{align}
+    \label{eq:beta decay}
+    n &\quad\rightarrow\quad p + e + \bar{\nu}_e \\
+    \label{eq:inverse beta decay} p + e & \quad\rightarrow\quad n + \nu_e
+\end{align}
+
+Fermi energy level rises more quickly for electrons, so the neutron decay
+\eqref{eq:beta decay} becomes energetically less favorable around a critical
+density $\sim 10^{7}\si[]{\gram\per\cubic\cm}$ (Pauli blocking) and as the 
+density more electrons are captured into neutrons: beta equilibrium. This
+results in the formation of Coulomb crystals of progressively more neutron-rich
+nuclei \footnote{Laboratory nuclear matter has nearly equal number of neutrons
+and protons.}.
+
+At matter densities a few times the $n_0$, the nucleon Fermi energies becomes so
+large that it is energetically favorable to transform into heavier baryons such
+as hyperons via electroweak interactions.
+
+
+
+
+% ---------------------------------------------------------------------------
+% 
+%                    Section
+% 
+% ---------------------------------------------------------------------------
+\section{Astrophysical black holes}
+
+% --------------------------------------------------- %
+%               subsection
+% --------------------------------------------------- %
+\subsection{How to observe}
+
+\begin{itemize}
+    \item X-ray binaries \\
+        LMXB : \\
+        HMXB : 
+    \item Microlensing e.g. OGLE
+    \item LIGO-VIRGO observations
+\end{itemize}
+
+% --------------------------------------------------- %
+%               subsection
+% --------------------------------------------------- %
+\subsection{Mass}
+
+stellar mass BHs : stellar evolution from massive MS star with $8-20\solarmass$;
+IMBH : $10^2 - 10^4 \solarmass$, extremely rare, GW190521;
+SMBH : $\sim 10^8 \solarmass$;
+
+
+
+
+
+% ---------------------------------------------------------------------------
+\setlength{\bibsep}{1ex}
+
+% \nocite{*}
+% \printbibliography[heading=none]
+
+% \vspace{1em}
+% \newpage
+\bibliography{references}
+% \nocite{*}
+% \bibliographystyle{apalike}
+% \bibliographystyle{abbrvnat}
+% \bibliographystyle{unsrtnat}
+% \bibliographystyle{plainnat}
+% \bibliographystyle{../aasjournal}
+% \bibliographystyle{../apsrmp4-2}
+% \bibliographystyle{../apsrev4-2}
+\bibliographystyle{../mnras}
+
+% ---------------------------------------------------------------------------
+\end{document}
